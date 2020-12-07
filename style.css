@@ -11,14 +11,14 @@
   --very-light-gray: hsl(0, 0%, 98%);
   --white: #fff;
 }
-/*  I know it have a bad nameing but who is matter :sweat_smile: */
+/*  I know it have a bad nameing but who is matter 😅 */
 .dark-mode {
   --very-dark-blue: hsl(0, 0%, 98%);
   --grayish-blue: hsl(229, 6%, 66%);
   --very-light-gray: hsl(234, 17%, 17%);
   --white: hsl(234, 13%, 19%);
 }
-
+/* init css / general styles  */
 *,
 *::before,
 *::after {
@@ -35,9 +35,8 @@
   display: flex;
 }
 .container {
-  padding-top: 3em;
   width: 80%;
-  margin: 0px auto;
+  margin: 5em auto;
 }
 .bt-red {
   border-top: 3px solid var(--red);
@@ -60,6 +59,20 @@ h2,
 h3 {
   color: var(--very-dark-blue);
 }
+/* end of init css / general styles  */
+.toggle-theme-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 2em;
+  right: 2em;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+}
+.toggle-theme-btn:focus {
+  outline: none;
+}
+
 .s1 header {
   align-items: center;
   text-align: center;

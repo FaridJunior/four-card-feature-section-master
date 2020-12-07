@@ -20,7 +20,7 @@
     <title>Frontend Mentor | Four card feature section</title>
     <style>
       .attribution {
-        margin-top: 6em;
+        margin-top: 16em;
         font-size: 11px;
         text-align: center;
       }
@@ -29,7 +29,8 @@
       }
     </style>
   </head>
-  <body class="dark-mode">
+  <body>
+    <button class="toggle-theme-btn" aria-hidden="true">🌒</button>
     <section class="s1">
       <div class="container">
         <header class="flex-col">
@@ -84,8 +85,46 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="https://twitter.com/mfarid_se">Mohamed Farid</a>.
       </p>
     </footer>
   </body>
+  <script>
+    const toggleThemeBtn = document.querySelector(".toggle-theme-btn");
+    //  this match media not suported by IE
+    const preferedDarkColorSchemeListener = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    preferedDarkColorSchemeListener.addEventListener("change", (e) => {
+      if (e.matches) {
+        enableDarkMode();
+      } else {
+        enableLightMode();
+      }
+    });
+    toggleThemeBtn.addEventListener("click", () => {
+      theme = localStorage.getItem("theme") || "light";
+      if (theme === "dark") {
+        enableLightMode();
+      } else {
+        enableDarkMode();
+      }
+    });
+    function enableLightMode() {
+      toggleThemeBtn.textContent = "🌒";
+      localStorage.setItem("theme", "light");
+      document.body.classList.remove("dark-mode");
+    }
+    function enableDarkMode() {
+      toggleThemeBtn.textContent = "🌞";
+      localStorage.setItem("theme", "dark");
+      document.body.classList.add("dark-mode");
+    }
+    if (
+      preferedDarkColorSchemeListener.matches && // prefer dark theme
+      localStorage.getItem("theme") === null // first visit
+    ) {
+      enableDarkMode();
+    }
+  </script>
 </html>
