@@ -129,6 +129,12 @@ h3 {
   .flex-row-col {
     flex-direction: column;
   }
+}
+@media (max-width: 800px) {
+  .toggle-theme-btn {
+    top: 1em;
+    right: 1em;
+  }
   .s1 header .main_header,
   .s1 header .secondary_header {
     font-size: 1.4em;
