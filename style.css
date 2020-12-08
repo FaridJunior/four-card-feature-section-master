@@ -50,6 +50,9 @@
 .bt-blue {
   border-top: 3px solid var(--blue);
 }
+*{
+  transition:300ms;
+}
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--very-light-gray);
