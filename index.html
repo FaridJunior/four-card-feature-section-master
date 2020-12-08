@@ -95,6 +95,8 @@
     const preferedDarkColorSchemeListener = window.matchMedia(
       "(prefers-color-scheme: dark)"
     );
+    let theme = localStorage.getItem("theme");
+
     preferedDarkColorSchemeListener.addEventListener("change", (e) => {
       if (e.matches) {
         enableDarkMode();
@@ -104,6 +106,7 @@
     });
     toggleThemeBtn.addEventListener("click", () => {
       theme = localStorage.getItem("theme") || "light";
+      console.log(theme);
       if (theme === "dark") {
         enableLightMode();
       } else {
@@ -121,8 +124,9 @@
       document.body.classList.add("dark-mode");
     }
     if (
-      preferedDarkColorSchemeListener.matches && // prefer dark theme
-      localStorage.getItem("theme") === null // first visit
+      (preferedDarkColorSchemeListener.matches && // prefer dark theme
+        theme === null) || // first visit
+      theme === "dark"
     ) {
       enableDarkMode();
     }
