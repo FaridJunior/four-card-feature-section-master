@@ -1,4 +1,4 @@
-# Frontend Mentor - Four card feature section [preview](https://vercel.com/mohamedfarids/four-card-feature-section-master)
+# Frontend Mentor - Four card feature section [preview](https://four-card-feature-section-master-orcin-three.vercel.app/)
 
 ![Design preview for the Four card feature section coding challenge](./design/desktop-preview.jpg)
 
